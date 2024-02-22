@@ -1,0 +1,79 @@
+.playing {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 70% 1fr;
+    padding: 50px;
+    text-align: center;
+    gap: 10px;
+    opacity: 0;
+    animation: showGame 1s ease-in-out 1 forwards;
+}
+
+@keyframes showGame {
+    to{
+        opacity: 1;
+    }
+}
+
+.playing .list {
+    padding: 50px;
+    list-style: none;
+    text-align: left;
+    background-image: linear-gradient(45deg, #5556a0, #ab84b4);
+    border-radius: 20px;box-shadow: 0 2px 0 #fff;
+}
+
+.playing li {
+    display: inline-block;
+    font-size: x-large;
+    padding: 10px;
+    text-shadow: 0 2px 2px #0009;
+    position: relative;
+}
+
+.playing input {
+    width: 100%;
+    padding: 20px 0;
+    outline: none;
+    text-align: center;
+    font-size: x-large;
+    background-color: #0005;
+    border: none;
+    color: #fff;
+    border-radius: 20px;
+    font-family: Poppins;
+}
+
+.playing li.true {
+    color: greenyellow;
+}
+
+.playing li.false {
+    color: red;
+}
+
+.playing li.true::after, 
+.playing li.false::after {
+    position: absolute;
+    inset: 0 0 0 0;
+    content: '+1';
+    text-align: center;
+    animation: showPoint .5s linear 1 forwards;
+} 
+
+.playing li.false::after {
+    content: '-1';
+}
+
+@keyframes showPoint {
+    0%{
+        opacity: 0;
+    }
+    50%{
+        opacity: 1;
+    }
+    100%{
+        transform: translateY(-50px);
+        opacity: 0;
+    }
+}

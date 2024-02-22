@@ -1,15 +1,16 @@
 import React from 'react'
+import s from './style.module.css'
 
 export const Start = ({ onGame }) => {
     return (
-        <div className="home">
-            <div className="title">
+        <div className={s.home}>
+            <div className={s.title}>
                 Typying Game
             </div>
-            <div className="author">
+            <div className={s.author}>
                 Iskenderov Arthur
             </div>
-            <button className="btnPlay" onClick={ () => onGame('playGame') }> Play Game </button>
+            <button className={s.btnPlay} onClick={ () => onGame('playGame') }> Play Game </button>
         </div>
     )
 }
