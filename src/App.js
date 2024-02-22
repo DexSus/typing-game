@@ -17,7 +17,7 @@ function App() {
 
         const timeOutGame = setTimeout(() =>{
           setStatusGame('endGame')
-        }, 60000);
+        }, 30000);
 
         return () => clearTimeout(timeOutGame);
       }
